@@ -1,0 +1,221 @@
+\documentclass{book} 
+
+%% Language and font encodings 
+\usepackage[english]{babel} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{fancyhdr} 
+%% Sets page size and margins 
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2.5cm,right=2.5cm,marginparwidth=1.95cm]{geometry} 
+\usepackage{color} 
+%% Useful packages 
+\usepackage[fleqn]{amsmath}
+\usepackage{graphicx} 
+\usepackage[colorinlistoftodos]{todonotes} 
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{setspace} 
+\definecolor{light-gray}{rgb}{0.8,0.8,0.8}
+\setcounter{chapter}{1}
+\setcounter{section}{4}
+\setlength{\headheight}{12pt}
+\newcounter{pro1}
+\setcounter{pro1}{5}
+\newcommand{\pro}{\par\addtocounter{pro1}{1}
+\textbf{Problem \arabic{chapter}.\arabic{pro1} }\quad}
+\setcounter{equation}{13}
+
+\begin{document}
+\pagestyle{fancy} 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhead[RO]{\large \textsl {\textbf{9}}} 
+\fancyhead[LO]{\large \textsl{1.3 Guessing integrals}} 
+\begin{flushleft}
+\Large\textrm{or}
+\end{flushleft}
+\begin{equation}
+  [\alpha]=[x]^{-2}
+\end{equation}
+\Large\textrm {This conclusion is useful, but continuing to use unspecified but general
+dimensions requires lots of notation, and the notation risks burying the
+reasoning.}\\
+\\
+\Large\textrm {The simplest alternative is to make $x$ dimensionless. That choice makes $\alpha$
+and $f(\alpha)$ dimensionless, so any candidate for $f(\alpha)$ would be dimensionally
+valid, making dimensional analysis again useless. The simplest effective
+alternative is to give x simple dimensions—for example, length. (This
+choice is natural if you imagine the x axis lying on the floor.) Then
+ $[\alpha] = L^{−2}$ .}\\
+ \\
+ \large\textrm {\textbf{1.3.2 Dimensions of the integral}}\\
+ \\
+ \Large\textrm{The assignments $[x] = L$ and $[\alpha] = L^{−2}$ determine the dimensions of the
+Gaussian integral. Here is the integral again:}\\
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-\alpha x^{2}}dx.
+\end{equation}
+\Large\textrm{The dimensions of an integral depend on the dimensions of its three
+pieces: the integral sign $\int$,the integrand $e^{-\alpha x^{2}}$, and the differential $dx$}\\
+\\
+\Large\textrm{The integral sign originated as an elongated S for  \textit{Summe}, the German
+word for sum. In a valid sum, all terms have identical dimensions: The
+fundamental principle of dimensions requires that apples be added only
+to apples. For the same reason, the entire sum has the same dimensions
+as any term. Thus, the summation sign—and therefore the integration
+sign—do not affect dimensions: The integral sign is dimensionless.}\\
+\\
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm {\textbf{\pro Integrating velocity}}\\
+\large\textrm {Position is the integral of velocity. However, position and velocity have different
+dimensions. How is this difference consistent with the conclusion that the
+integration sign is dimensionless?}
+\end{minipage}
+}
+\\
+\\
+\Large\textrm{Because the integration sign is dimensionless, the dimensions of the integral
+are the dimensions of the exponential factor $e^{−\alpha x^{2}}$
+multiplied by the
+dimensions of $dx$. The exponential, despite its fierce exponent $−\alpha x^{2}$, is
+merely several copies of e multiplied together. Because e is dimensionless,
+so is $e^{−\alpha x^{2}}$
+.}
+
+
+\newpage
+\pagestyle{fancy} 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{}
+\fancyhead[LE]{\large \textsl {\textbf{10}}} 
+\fancyhead[RE]{\large \textsl{1 Dimensions}}
+\begin{flushleft}
+\Large\textit{What are the dimensions of $dx$?}
+\end{flushleft}
+\Large \textrm{To find the dimensions of dx, follow the advice of Silvanus Thompson
+[45, p. 1]: Read d as “a little bit of.” Then dx is “a little bit of x.” A little
+length is still a length, so dx is a length. In general, dx has the same
+dimensions as x. Equivalently, d—the inverse of $\int$—is dimensionless.}\\
+\\
+\Large\textrm{Assembling the pieces, the whole integral has dimensions of length:}
+\begin{equation}
+\biggl[ \int e^{-\alpha x^{2}}dx\biggl]=\underbrace{\Bigl[ e^{-\alpha x^{2}}dx \Bigl]}_l \times \underbrace{[dx]}_L=L
+\end{equation}
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{\textbf{\pro Don’t integrals compute areas?}}\\
+\large\textrm{A common belief is that integration computes areas. Areas have dimensions of $L^{2}$. How then can the Gaussian integral have dimensions of L?}
+\end{minipage}
+}
+\\
+\\
+\\
+\Large\textrm{\textbf{1.3.3 Making an $f(\alpha)$ with correct dimensions}}\\
+\\
+\Large\textrm{The third and final step in this dimensional analysis is to construct an $f(\alpha)
+$with the same dimensions as the integral. Because the dimensions of $\alpha$
+are $L^{−2}$, the only way to turn $\alpha$ into a length is to form $\alpha^{−1/2}$. Therefore,}
+\begin{equation}
+f(\alpha)\sim\alpha^{-1/2}.
+\end{equation}
+\Large\textrm{This useful result, which lacks only a dimensionless factor, was obtained
+without any integration.}\\
+\Large\textrm{To determine the dimensionless constant, set $\alpha = 1$ and evaluate}
+\begin{equation}
+f(1)=\int_{-\infty}^{\infty}e^{- x^{2}}dx.
+\end{equation}
+\Large\textrm{This classic integral will be approximated in Section 2.1 and guessed to be $\sqrt[]{\pi}$.The two results $f(1)=\sqrt[]\pi$ and $f(\alpha)\sim\alpha^{-1/2}$ require that$f(\alpha)=\sqrt[]{\pi/\alpha}$,which yields}
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-\alpha x^{2}}dx=\sqrt{\frac{\pi}{\alpha}}.
+\end{equation}
+\Large\textrm{We often memorize the dimensionless constant but forget the power of $\alpha$.
+Do not do that. The $\alpha$ factor is usually much more important than the
+dimensionless constant. Conveniently, the $\alpha$ factor is what dimensional
+analysis can compute.}
+
+\newpage
+\pagestyle{fancy} 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{}
+\fancyhead[RO]{\large \textsl {\textbf{11}}} 
+\fancyhead[LO]{\large \textsl{1.4 Summary and further problems}} 
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{\textbf{\pro Change of variable}}\\
+\large\textrm{Rewind back to page 8 and pretend that you do not know $f(\alpha)$. Without doing
+dimensional analysis, show that $f(\alpha) \sim \alpha^{−1/2}$.}\\
+\large\textrm{\textbf{\pro Easy case $\alpha$ = 1}}\\
+Setting $\alpha$ = 1, which is an example of easy-cases reasoning (Chapter 2), violates
+the assumption that x is a length and $\alpha$ has dimensions of $L^{−2}$. Why is it okay
+to set $\alpha$ = 1?\\
+\large\textrm{\textbf{\pro Integrating a difficult exponential}}\\
+Use dimensional analysis to investigate $\displaystyle\int_{0}^{\infty}e^{-\alpha t^{3}}dt$
+\end{minipage}
+}
+\\
+\\
+\\
+\Large\textrm{\textbf{1.4 Summary and further problems}}\\
+
+\Large\textrm{Do not add apples to oranges: Every term in an equation or sum must
+have identical dimensions! This restriction is a powerful tool. It helps us
+to evaluate integrals without integrating and to predict the solutions of
+differential equations. Here are further problems to practice this tool.}\\
+\\
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{\textbf{\pro Integrals using dimensions}}\\
+\large\textrm{Use dimensional analysis to find $\displaystyle\int_{0}^{\infty}e^{-\alpha x}dx$ and $\displaystyle\int \frac{dx}{x^2+a^2}.$A useful result is}
+\begin{equation}
+\int\frac{dx}{x^2+1}=\arctan x+C.
+\end{equation}
+\large\textrm{\textbf{\pro Stefan–Boltzmann law}}\\
+\large\textrm{Blackbody radiation is an electromagnetic phenomenon, so the radiation intensity
+depends on the speed of light $c$.It is also a thermal phenomenon, so it
+depends on the thermal energy $k_BT$, where $T$ is the object’s temperature and $k_BT$ is Boltzmann’s constant. And it is a quantum phenomenon, so it depends on
+Planck’s constant $\hbar$ . Thus the blackbody-radiation intensity I depends on $c$,$k_BT$,and $\hbar$.Use dimensional analysis to show that I $\alpha$ $ T^4$ and to find the constant
+of proportionality $\sigma$.Then look up the missing dimensionless constant. (These
+results are used in Section 5.3.3.)}
+\\
+\large\textrm{\textbf{\pro Arcsine integral}}\\
+Use dimensional analysis to find $\displaystyle\int \sqrt[]{1-3x^2}dx.$ A useful result is
+\begin{equation}
+\int\sqrt[]{1-x^2}dx=\frac{\arcsin x}{2}+\frac{x \sqrt[]{1-x^2}}{2}+C,
+\end{equation}
+\end{minipage}
+}
+
+\newpage
+\pagestyle{fancy} 
+\renewcommand{\headrulewidth}{0pt} 
+\fancyhf{}
+\fancyhead[LE]{\large \textsl {\textbf{12}}} 
+\fancyhead[RE]{\large \textsl{1 Dimensions}}
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\begin{flushleft}
+\large\textrm{\textbf{\pro Related rates}}\\
+Water is poured into a large inverted cone (with a $90^\circ
+$ opening
+angle) at a rate $\displaystyle dV/dT=10m^3s^-1.$ When the water
+depth is h = 5 m, estimate the rate at which the depth is
+increasing. Then use calculus to find the exact rate.
+\\
+\large\textrm{\textbf{\pro Kepler’s third law}}\\
+Newton’s law of universal gravitation—the famous inverse-square law—says that
+the gravitational force between two masses is
+\begin{equation}
+F=-\frac{Gm_1m_2}{r^2},
+\end{equation}
+where $G$ is Newton’s constant, $m_1$ and $m_2$ are the two masses, and $r$ is their
+separation. For a planet orbiting the sun, universal gravitation together with
+Newton’s second law gives
+\begin{equation}
+m\frac{d^2\textbf{r}}{dt^2}=-\frac{GMm}{r^2}\hat r,
+\end{equation}
+where $M$ is the mass of the sun, $m$ the mass of the planet, \textbf{r} is the vector from the sun to the planet, and ${\hat r}$ is the unit vector in the \textbf{r} direction.\\
+How does the orbital period $\tau
+$ depend on orbital radius r? Look up Kepler’s third law and compare your result to it.
+\end{flushleft}
+\end{minipage}
+}
+\end{document}

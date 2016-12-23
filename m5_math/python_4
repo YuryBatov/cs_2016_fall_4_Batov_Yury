@@ -1,0 +1,65 @@
+def 1a(d):
+    s=0
+    for x in d:
+       s=s+x
+    return s
+def 1b(b):
+    s=0
+    i=len(b)-1
+    while i>0:
+        s=s+b[i]
+        i=i-1
+    return s
+def 1c(b,i=0):
+        if i!=len(b)-1:
+            return b[i]+go2(b,i=i+1)
+        else:
+            return b[i]
+def so(n,k=0):
+    a=n
+    while n//2!=0:
+        n=n//2
+        k=k+1
+    return k , 2**k
+def ho(b):
+    import functools
+    k=functools.reduce(lambda a,x:a+x,b)/len(b)
+    return k
+def lo(n):
+    k=1
+    c=1
+    p=2
+    while c<n:
+        v=c
+        c=c+k
+        k=v
+        p=p+1
+    if c==n:
+        return p
+    else:
+        return -1
+def fy(n):
+    if n==1:
+        return n
+    else:
+        return fy(n-1)*n
+def fo(b):
+    m=k=b[0]
+    i=j=0
+    x=len(b)-1
+    while(x>0):
+        if(b[x]>m):
+            m=b[x]
+            i=x
+        if(b[x]<k):
+            k=b[x]
+            j=x
+        x=x-1
+    c=b[i]
+    b[i]=b[j]
+    b[j]=c
+    return b
+import math 
+def bo(x1,x2,y1,y2):
+    c=(x2-x1)**2+(y2-y1)**2
+    return math.sqrt(c)

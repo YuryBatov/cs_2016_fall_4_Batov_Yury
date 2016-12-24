@@ -63,3 +63,34 @@ import math
 def bo(x1,x2,y1,y2):
     c=(x2-x1)**2+(y2-y1)**2
     return math.sqrt(c)
+from functools import reduce
+def co(a,b):
+    lab1=a.split()
+    a1=[]
+        for i in lab1:
+            a1.append(float(i))
+    a=sum(a1)
+    g=3.86
+    fib=b.split()
+    b1=[]
+    for i in fib:
+        b1.append(float(i))
+    h=sum(b1)
+    m=h*math.pi/180
+    lim=0
+    z=1
+    x=1
+    t5=1
+    while x>0:
+        x=a*math.sin(m)*z-(g*z**2)/2
+        z+=0.01
+    t=np.arange(0,z,0.01)
+    t1=a*math.cos(m)*t
+    x=(a*math.sin(m)*t-(g*t**2)/2)
+    plt.plot(t1, t2)
+    plt.axis('equal')
+    plt.xlabel(r'$S,м$')  
+    plt.ylabel(r'$H,м$')  
+    plt.title(r'$Mars$')  
+    plt.grid(True)  
+    plt.show()

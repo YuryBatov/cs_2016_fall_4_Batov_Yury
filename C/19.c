@@ -6,10 +6,10 @@
     { 
     FILE *fin = fopen("input.txt", "r"); 
     FILE *fout = fopen("output.txt", "w"); 
-    int i = 0, slkol = 0; //slkol - количество слешей, идущих подряд 
+    int i = 0, slkol = 0; 
     char cArray[10000], c = 'n', lc = 'n', s[10000], cc = 'n', ccc = 'n'; 
     int len = strlen(cArray); 
-    int kav1 = 0, kav2 = 0; // Кавычки. 1 - '_', 2 - "_"; 
+    int kav1 = 0, kav2 = 0; 
 
     for (i = 0; i<10000; i++) { s[i] = cArray[i] = '\0'; } 
 
@@ -17,8 +17,7 @@
     xyz: 
     c = fgetc(fin); 
     if (feof(fin)) { break; } 
-    eto: 
-    //кавычки типа "_" 
+    eto:
     if (c == '\"') { 
     fputc('\"', fout); 
     i = 0; 
@@ -38,13 +37,10 @@
     else { if (c != '\"') { slkol = 0; } } 
     fputc(c, fout); 
     } 
-    //fputc('#', fout); 
     goto xyz; 
     } 
     else { 
     uidi:; 
-    //TODO Уйти в кулинарный 
-    //кавычки типа '_' 
     if (c == '\'') { 
     fputc('\'', fout); 
     i = 0; 
@@ -66,9 +62,6 @@
     goto xyz; 
     } 
     else { 
-    //. 
-
-    //Комментарии 
     if (c == '/') { 
     c = fgetc(fin); if (feof(fin)) { fputc('/', fout); goto tuda; } 
     if (c == '/') { 
@@ -98,9 +91,6 @@
     else { fputc(c, fout); } 
     } 
     } 
-
-    //----------------------Комментарии 
-
     } 
     tuda: 
     fclose(fin); 

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 FILE *X;
+FILE *C;
 void XOR(char *str,char *key )
 {
     int i,n;
@@ -19,16 +20,20 @@ void XOR(char *str,char *key )
 int main()
 {
     setlocale(LC_ALL,"Rus");
-    char stroka[10000]={0},m,s,key[100];
+    char stroka[10000],m,s,key[100],fail[100];
     int i=0,j;
     printf("Введите ключ: ");
     gets(key);
-    FILE *C;
-    C=fopen("output.txt","r");
-    X=fopen("input.txt","w");
-    while((stroka[i]=fgetc(C))!=EOF){
+    printf("Введите путь к вашему файлу ");
+    gets(fail);
+    C=fopen(fail,"r");
+    while(!feof(C))
+    {
+        stroka[i]=fgetc(C);
         i++;
     }
+    fclose(C);
+    X=fopen(fail,"w");
     XOR(stroka,key);
     printf("Ваш текст закодирован");
     return 0;

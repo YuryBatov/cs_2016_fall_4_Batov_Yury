@@ -1,31 +1,31 @@
 #include <stdio.h>
 #include <locale.h>
+#include <math.h>
 
-int pow(int a, int step)
+int rightrot(unsigned int x,int n)
 {
     int i;
-    int s=a;
-	if (step == 0)
-		return 1;
-	for ( i=1; i<step; i++)
-    {
-        s*=a;
-    }
-    return s;
-}
-
-int rightrot(int x,int n)
-{
-    int c;
-    c=n%32;
-    n=32-c;
-    return x=x*pow(2,n);
+    n=n%32;
+    for(i=0;i<n;i++)
+        {
+            if((x%2) == 0)
+            {
+                x=x/2;
+            }
+            else
+            {
+                x=x/2;
+                x=x+pow(2,31);
+            }
+        }
+    return x;
 }
 
 int main()
 {
     setlocale(LC_ALL,"Rus");
-    int b,h,f;
+    int h;
+    unsigned int b;
     printf("Введите число\n");
     scanf("%d",&b);
     printf("Введите разряд\n");

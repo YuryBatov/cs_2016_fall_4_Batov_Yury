@@ -65,3 +65,5 @@ int main()
 	scanf("%s", &a2);
 	printf("Строка и исходная строка равны (если 1, то равны): %i\n", strncmp(a2, a1, x));
 	return 0;
+
+}

@@ -4,10 +4,10 @@
 int main(void) {
     char a[100] ;
     int i,j;
-        scanf("%s",a);
+        gets(a);
     for(j=0;a[j]!='\0';j++)
     {
-        if(a[j]==a[j+1] || a[j-1]==a[j])
+        if(a[j]==a[j+1])
             continue;
         printf("%c",a[j]);
     }

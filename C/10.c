@@ -1,17 +1,22 @@
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
+
 int rightrot(int x,int n)
 {
-    int i;
+    int i ,k=0;
     for(i=0;i<n;i++)
         {
             if((x%2) == 0)
             {
+                k++;
                 x=x/2;
+                if(k == 1)
+                    x=x*(-1);
             }
             else
             {
+                k=0;
                 x=x/2;
                 x=x+pow(2,31);
             }

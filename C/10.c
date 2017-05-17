@@ -4,21 +4,17 @@
 
 int rightrot(int x,int n)
 {
-    int i ,k=0;
+    int i ;
     for(i=0;i<n;i++)
         {
             if((x%2) == 0)
             {
-                k++;
                 x=x/2;
-                if(k == 1)
-                    x=x*(-1);
             }
             else
             {
-                k=0;
                 x=x/2;
-                x=x+pow(2,31);
+                x=x+pow(2,15);
             }
         }
         return x;

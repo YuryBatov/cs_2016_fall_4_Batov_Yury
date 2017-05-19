@@ -15,7 +15,7 @@ int main(void)
 {
     double dia1 , dia2, x1 ;
     setlocale(LC_ALL,"Rus");
-    printf("Введите начало диапазона(функция y=2x)");
+    printf("Введите начало диапазона(функция y=x^2)");
     scanf("%lf",&dia1);
     printf("Введите конец диапазона ");
     scanf("%lf",&dia2);

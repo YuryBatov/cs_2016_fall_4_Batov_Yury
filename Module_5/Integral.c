@@ -29,11 +29,12 @@ int main(void)
     double dia1 , dia2, x1 ;
     int x;
     setlocale(LC_ALL,"Rus");
-    printf("Введите начало диапазона(для функции y=x^2) ");
+    printf("Введите начало диапазона(для функции y=2x) ");
     scanf("%lf",&dia1);
     printf("Введите конец диапазона ");
     scanf("%lf",&dia2);
     printf("Введите  количество разбиений: ");
     scanf("%i",&x);
     printf("Ответ: %lf\n",Simpson(dia1,dia2,x));
+    return 0;
 }

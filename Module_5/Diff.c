@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
 void Diff(float x1,float x2,float h)
 {
     float dif3 = 0,xi=0;

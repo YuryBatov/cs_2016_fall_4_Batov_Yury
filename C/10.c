@@ -2,7 +2,7 @@
 #include <locale.h>
 #include <math.h>
 
-int rightrot(int x,int n)
+unsigned int rightrot(unsigned int x,unsigned int n)
 {
     int i ;
     for(i=0;i<n;i++)
@@ -14,7 +14,7 @@ int rightrot(int x,int n)
             else
             {
                 x=x/2;
-                x=x+pow(2,15);
+                x=x+pow(2,31);
             }
         }
         return x;
@@ -23,11 +23,11 @@ int rightrot(int x,int n)
 int main()
 {
     setlocale(LC_ALL,"Rus");
-    int b,h,f;
+    unsigned int b,h,f;
     printf("Введите число\n");
-    scanf("%d",&b);
+    scanf("%u",&b);
     printf("Введите разряд\n");
-    scanf("%d",&h);
-    printf("Результат %i\n",rightrot(b,h));
+    scanf("%u",&h);
+    printf("Результат %u\n",rightrot(b,h));
     return 0;
 }

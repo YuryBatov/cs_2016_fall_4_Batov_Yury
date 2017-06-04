@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <locale.h>
-#include <math.h>
 //функция y=2*x
+double Funktion(double x)
+{
+    return 2*x;
+}
 double Simpson(double a,double b,int n)
 {
     int  i = 1;
@@ -13,15 +16,15 @@ double Simpson(double a,double b,int n)
             c=c+h;
             if(i%2!=0)
                 {
-                    sum=sum+2*c;
+                    sum=sum+Funktion(c);
                 }
             else
                 {
-                    sum_1=sum_1+2*c;
+                    sum_1=sum_1+Funktion(c);
                 }
                 i++;
         }
-        integral=h/3*(2*a+2*b+4*sum+2*sum_1);
+        integral=h/3*(Funktion(a)+Funktion(b)+4*sum+2*sum_1);
     return integral;
 }
 int main(void)
